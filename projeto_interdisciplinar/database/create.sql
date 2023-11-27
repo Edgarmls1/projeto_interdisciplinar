@@ -11,6 +11,7 @@ create table recuperar(
 	num_arvores_plantar_m2 float
 );
 
+
 create or replace function calculo_reflorestamento()
 returns trigger as $$
 declare
@@ -24,10 +25,12 @@ begin
 end;
 $$ language plpgsql;
 
+
 create trigger calculo_reflorestamento
 after insert on dados_desmatamento
 for each row
 execute function calculo_reflorestamento();
+
 
 insert into dados_desmatamento values (default, now(), 'Pará', 2000.0)
 
