@@ -8,7 +8,7 @@ conn = psycopg2.connect(
     host="localhost",
     database="desmatamento_amazonia",
     user="postgres",
-    password="070204"
+    password="postgres"
 )
 conn.autocommit = True
 
